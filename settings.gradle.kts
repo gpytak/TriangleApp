@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "TriangleApp"
+rootProject.name = "MyTriangleApp"
 include(":app")

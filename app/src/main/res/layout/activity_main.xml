@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="25dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TriangleApp"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="30dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What kind of triangle is it?"
+        android:textSize="18sp"
+        android:layout_marginBottom="15dp"/>
+
+    <EditText
+        android:id="@+id/side1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter first side"
+        android:inputType="numberDecimal|numberSigned"/>
+
+    <EditText
+        android:id="@+id/side2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter second side"
+        android:inputType="numberDecimal|numberSigned"/>
+
+    <EditText
+        android:id="@+id/side3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter third side"
+        android:inputType="numberDecimal|numberSigned"/>
+
+    <Button
+        android:id="@+id/checkTriangleButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CHECK TRIANGLE"/>
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Result"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:padding="20dp"/>
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RESET"/>
+
+</LinearLayout>

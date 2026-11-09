@@ -1,4 +1,4 @@
-package com.example.triangleapp
+package com.example.mytriangleapp
 
 import org.junit.Test
 
