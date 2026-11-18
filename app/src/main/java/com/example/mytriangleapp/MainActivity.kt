@@ -19,6 +19,11 @@ class MainActivity : Activity()
 
     private lateinit var result: TextView
 
+    // Create an instance of TriangleCalculator.
+    private val triangleCalculator = TriangleCalculator()
+
+
+    // onCreate - Main driver for the game.
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)     // Initialize Activity.
@@ -71,12 +76,16 @@ class MainActivity : Activity()
         }
 
         // Identify and display the triangle type.
-        //@TODO
+        result.text = triangleCalculator.checkTriangle(text1, text2, text3)
     }
 
     // Reset the game
-    //@TODO
     private fun resetGame()
     {
+        side1.text.clear()
+        side2.text.clear()
+        side3.text.clear()
+
+        result.text = "Result"
     }
 }
