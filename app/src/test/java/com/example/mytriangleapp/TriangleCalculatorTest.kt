@@ -26,18 +26,23 @@ class TriangleCalculatorTest
     //@TODO - Sprint 3
 
     // --------------------------------
-    // convertToNumber() tests
-    // --------------------------------
-    //@TODO- Sprint 2
-    @Test
-    fun convertToNumber_validInteger() {
-        assertEquals(123.0, calculator.convertToNumber("123")!!, 0.0001)
-    }
-
-    // --------------------------------
     // classifyTriangle() tests
     // --------------------------------
     //@TODO- Sprint 2
+    @Test
+    fun classifyTriangle_scalene() {
+        assertEquals(
+            "Scalene!",
+            calculator.classifyTriangle(3.0, 4.0, 5.0)
+        )
+    }
+    @Test
+    fun classifyTriangle_isosceles() {
+        assertEquals(
+            "Isosceles!",
+            calculator.classifyTriangle(3.0, 3.0, 5.0)
+        )
+    }
     @Test
     fun classifyTriangle_equilateral() {
         assertEquals(
@@ -46,30 +51,65 @@ class TriangleCalculatorTest
         )
     }
 
-
+    // --------------------------------
+    // convertToNumber() tests
+    // --------------------------------
+    //@TODO- Sprint 2
+    @Test
+    fun convertToNumber_validInteger() {
+        assertEquals(5.0, calculator.convertToNumber("5")!!, 0.0001)
+    }
+    @Test
+    fun convertToNumber_zeroInput() {
+        assertEquals(0.0, calculator.convertToNumber("0")!!, 0.0001)
+    }
+    @Test
+    fun convertToNumber_decimalInput() {
+        assertEquals(2.5, calculator.convertToNumber("2.5")!!, 0.0001)
+    }
+    @Test
+    fun convertToNumber_negativeInput() {
+        assertEquals(-7.0, calculator.convertToNumber("-7")!!, 0.0001)
+    }
+    @Test
+    fun convertToNumber_emptyInput() {
+        assertNull(calculator.convertToNumber(""))
+    }
+    @Test
+    fun convertToNumber_invalidString() {
+        assertNull(calculator.convertToNumber("a"))
+    }
+    @Test
+    fun convertToNumber_invalidInteger() {
+        assertNull(calculator.convertToNumber("1.1.1"))
+    }
+    @Test
+    fun convertToNumber_invalidChar() {
+        assertNull(calculator.convertToNumber("!"))
+    }
 
     // Examples
-    @Test
-    fun addition_isCorrect()
-    {
-        assertEquals(4, 2 + 2)
-    }
-
-    @Test
-    fun true_isTrue()
-    {
-        assertTrue( 1 != 2)
-    }
-
-    @Test
-    fun false_isFalse()
-    {
-        assertFalse( 1 == 2)
-    }
-
-    @Test
-    fun null_isNull()
-    {
-        assertNull(null)
-    }
+//    @Test
+//    fun addition_isCorrect()
+//    {
+//        assertEquals(4, 2 + 2)
+//    }
+//
+//    @Test
+//    fun true_isTrue()
+//    {
+//        assertTrue(1 != 2)
+//    }
+//
+//    @Test
+//    fun false_isFalse()
+//    {
+//        assertFalse(1 == 2)
+//    }
+//
+//    @Test
+//    fun null_isNull()
+//    {
+//        assertNull(null)
+//    }
 }
