@@ -12,24 +12,24 @@ class TriangleCalculator
         }
 
         // Convert the Strings into numbers.
-        val a = convertToNumber(text1)
-        val b = convertToNumber(text2)
-        val c = convertToNumber(text3)
+        val side1 = convertToNumber(text1)
+        val side2 = convertToNumber(text2)
+        val side3 = convertToNumber(text3)
 
         // If three inputs were provided, confirm they are positive real numbers or integers.
-        if (a == null || b == null || c == null ||
-            a <= 0 || b <= 0 || c <= 0)
+        if (side1 == null || side2 == null || side3 == null ||
+            side1 <= 0 || side2 <= 0 || side3 <= 0)
         {
             return "ERROR: Enter three positive real numbers or integers."
         }
 
         // Check whether the numbers form a valid triangle.
-        if (!isValidTriangle(a, b, c))
+        if (!isValidTriangle(side1, side2, side3))
         {
             return "ERROR: Not a valid triangle!\nThe sum of any two sides must be greater than the third side."
         }
 
-        return classifyTriangle(a, b, c)
+        return classifyTriangle(side1, side2, side3)
     }
 
     // convertToNumber - Converts the String into a real number.
@@ -109,20 +109,20 @@ class TriangleCalculator
 
 
     // isValidTriangle - Check that the sides form a valid triangle.
-    fun isValidTriangle(a: Double, b: Double, c: Double): Boolean
+    fun isValidTriangle(side1: Double, side2: Double, side3: Double): Boolean
     {
-        return  a + b > c &&
-                a + c > b &&
-                b + c > a
+        return  side1 + side2 > side3 &&
+                side1 + side3 > side2 &&
+                side2 + side3 > side1
     }
 
     // classifyTriangle - Determine the type of triangle.
-    fun classifyTriangle(a: Double, b: Double, c: Double): String
+    fun classifyTriangle(side1: Double, side2: Double, side3: Double): String
     {
         return when
         {
-            a == b && b == c -> "Equilateral!"
-            a == b || a == c || b == c -> "Isosceles!"
+            side1 == side2 && side2 == side3 -> "Equilateral!"
+            side1 == side2 || side1 == side3 || side2 == side3 -> "Isosceles!"
             else -> "Scalene!"
         }
     }
