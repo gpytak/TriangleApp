@@ -23,54 +23,40 @@ class TriangleCalculatorTest
     // --------------------------------
     // isValidTriangle() tests
     // --------------------------------
-    //@TODO - Sprint 3
     @Test
     fun isValidTriangle_invalidIsosceles1() {
-        assertEquals(
-            false,
-            calculator.isValidTriangle(2.0, 2.0, 5.0)
+        assertFalse(calculator.isValidTriangle(2.0, 2.0, 5.0)
         )
     }
     @Test
     fun isValidTriangle_invalidIsosceles2() {
-        assertEquals(
-            false,
-            calculator.isValidTriangle(1.0, 3.0, 1.0)
+        assertFalse(calculator.isValidTriangle(1.0, 3.0, 1.0)
         )
     }
     @Test
     fun isValidTriangle_invalidScalene() {
-        assertEquals(
-            false,
-            calculator.isValidTriangle(3.0, 4.0, 8.0)
+        assertFalse(calculator.isValidTriangle(3.0, 4.0, 8.0)
         )
     }
     @Test
     fun isValidTriangle_scalene() {
-        assertEquals(
-            true,
-            calculator.isValidTriangle(2.0, 3.0, 4.0)
+        assertTrue(calculator.isValidTriangle(2.0, 3.0, 4.0)
         )
     }
     @Test
     fun isValidTriangle_isosceles() {
-        assertEquals(
-            true,
-            calculator.isValidTriangle(3.0, 3.0, 5.0)
+        assertTrue(calculator.isValidTriangle(3.0, 3.0, 5.0)
         )
     }
     @Test
     fun isValidTriangle_equilateral() {
-        assertEquals(
-            true,
-            calculator.isValidTriangle(5.0, 5.0, 5.0)
+        assertTrue(calculator.isValidTriangle(5.0, 5.0, 5.0)
         )
     }
 
     // --------------------------------
     // checkTriangle() tests
     // --------------------------------
-    //@TODO - Sprint 3
     @Test
     fun checkTriangle_empty() {
         assertEquals(
