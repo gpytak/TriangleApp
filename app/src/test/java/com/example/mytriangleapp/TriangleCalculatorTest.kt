@@ -25,24 +25,45 @@ class TriangleCalculatorTest
     // --------------------------------
     //@TODO - Sprint 3
     @Test
-    fun isValidTriangle_isosceles1() {
+    fun isValidTriangle_invalidIsosceles1() {
         assertEquals(
             false,
             calculator.isValidTriangle(2.0, 2.0, 5.0)
         )
     }
     @Test
-    fun isValidTriangle_isosceles2() {
+    fun isValidTriangle_invalidIsosceles2() {
         assertEquals(
             false,
             calculator.isValidTriangle(1.0, 3.0, 1.0)
         )
     }
     @Test
-    fun isValidTriangle_scalene() {
+    fun isValidTriangle_invalidScalene() {
         assertEquals(
             false,
             calculator.isValidTriangle(3.0, 4.0, 8.0)
+        )
+    }
+    @Test
+    fun isValidTriangle_scalene() {
+        assertEquals(
+            true,
+            calculator.isValidTriangle(2.0, 3.0, 4.0)
+        )
+    }
+    @Test
+    fun isValidTriangle_isosceles() {
+        assertEquals(
+            true,
+            calculator.isValidTriangle(3.0, 3.0, 5.0)
+        )
+    }
+    @Test
+    fun isValidTriangle_equilateral() {
+        assertEquals(
+            true,
+            calculator.isValidTriangle(5.0, 5.0, 5.0)
         )
     }
 
@@ -51,10 +72,10 @@ class TriangleCalculatorTest
     // --------------------------------
     //@TODO - Sprint 3
     @Test
-    fun checkTriangle_decimal() {
+    fun checkTriangle_empty() {
         assertEquals(
-            "ERROR: Enter three positive real numbers or integers.",
-            calculator.checkTriangle("-0.01", "1.0", "1.0")
+            "ERROR: Enter three real numbers or integers.",
+            calculator.checkTriangle("", "1.0", "1.0")
         )
     }
     @Test
@@ -69,6 +90,27 @@ class TriangleCalculatorTest
         assertEquals(
             "ERROR: Enter three positive real numbers or integers.",
             calculator.checkTriangle("-0.0", "-0.0", "-0.0")
+        )
+    }
+    @Test
+    fun checkTriangle_invalid1() {
+        assertEquals(
+            "ERROR: Not a valid triangle!\nThe sum of any two sides must be greater than the third side.",
+            calculator.checkTriangle("5.0", "2.0", "2.0")
+        )
+    }
+    @Test
+    fun checkTriangle_invalid2() {
+        assertEquals(
+            "ERROR: Not a valid triangle!\nThe sum of any two sides must be greater than the third side.",
+            calculator.checkTriangle("2.0", "5.0", "2.0")
+        )
+    }
+    @Test
+    fun checkTriangle_invalid3() {
+        assertEquals(
+            "ERROR: Not a valid triangle!\nThe sum of any two sides must be greater than the third side.",
+            calculator.checkTriangle("2.0", "2.0", "5.0")
         )
     }
 
