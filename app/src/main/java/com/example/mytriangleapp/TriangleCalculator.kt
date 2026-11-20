@@ -6,7 +6,10 @@ class TriangleCalculator
     fun checkTriangle(text1: String, text2: String, text3: String): String
     {
         // Check that all three inputs have been entered.
-        //@TODO
+        if (text1.isEmpty() || text2.isEmpty() || text3.isEmpty())
+        {
+            return "ERROR: Enter three real numbers or integers."
+        }
 
         // Convert the Strings into numbers.
         val a = convertToNumber(text1)
@@ -14,12 +17,19 @@ class TriangleCalculator
         val c = convertToNumber(text3)
 
         // If three inputs were provided, confirm they are positive real numbers or integers.
-        //@TODO
+        if (a == null || b == null || c == null ||
+            a <= 0 || b <= 0 || c <= 0)
+        {
+            return "ERROR: Enter three positive real numbers or integers."
+        }
 
         // Check whether the numbers form a valid triangle.
-        //@TODO
+        if (!isValidTriangle(a, b, c))
+        {
+            return "ERROR: Not a valid triangle!\nThe sum of any two sides must be greater than the third side."
+        }
 
-        return classifyTriangle(a!!, b!!, c!!)
+        return classifyTriangle(a, b, c)
     }
 
     // convertToNumber - Converts the String into a real number.
@@ -95,6 +105,15 @@ class TriangleCalculator
         }
 
         return number
+    }
+
+
+    // isValidTriangle - Check that the sides form a valid triangle.
+    fun isValidTriangle(a: Double, b: Double, c: Double): Boolean
+    {
+        return  a + b > c &&
+                a + c > b &&
+                b + c > a
     }
 
     // classifyTriangle - Determine the type of triangle.

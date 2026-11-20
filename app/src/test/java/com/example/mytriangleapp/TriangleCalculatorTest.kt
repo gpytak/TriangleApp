@@ -26,9 +26,13 @@ class TriangleCalculatorTest
     //@TODO - Sprint 3
 
     // --------------------------------
+    // isValidTriangle() tests
+    // --------------------------------
+    //@TODO - Sprint 3
+
+    // --------------------------------
     // classifyTriangle() tests
     // --------------------------------
-    //@TODO- Sprint 2
     @Test
     fun classifyTriangle_scalene() {
         assertEquals(
@@ -54,7 +58,6 @@ class TriangleCalculatorTest
     // --------------------------------
     // convertToNumber() tests
     // --------------------------------
-    //@TODO- Sprint 2
     @Test
     fun convertToNumber_validInteger() {
         assertEquals(5.0, calculator.convertToNumber("5")!!, 0.0001)
@@ -87,29 +90,4 @@ class TriangleCalculatorTest
     fun convertToNumber_invalidChar() {
         assertNull(calculator.convertToNumber("!"))
     }
-
-    // Examples
-//    @Test
-//    fun addition_isCorrect()
-//    {
-//        assertEquals(4, 2 + 2)
-//    }
-//
-//    @Test
-//    fun true_isTrue()
-//    {
-//        assertTrue(1 != 2)
-//    }
-//
-//    @Test
-//    fun false_isFalse()
-//    {
-//        assertFalse(1 == 2)
-//    }
-//
-//    @Test
-//    fun null_isNull()
-//    {
-//        assertNull(null)
-//    }
 }
