@@ -21,14 +21,56 @@ class TriangleCalculatorTest
     }
 
     // --------------------------------
-    // checkTriangle() tests
-    // --------------------------------
-    //@TODO - Sprint 3
-
-    // --------------------------------
     // isValidTriangle() tests
     // --------------------------------
     //@TODO - Sprint 3
+    @Test
+    fun isValidTriangle_isosceles1() {
+        assertEquals(
+            false,
+            calculator.isValidTriangle(2.0, 2.0, 5.0)
+        )
+    }
+    @Test
+    fun isValidTriangle_isosceles2() {
+        assertEquals(
+            false,
+            calculator.isValidTriangle(1.0, 3.0, 1.0)
+        )
+    }
+    @Test
+    fun isValidTriangle_scalene() {
+        assertEquals(
+            false,
+            calculator.isValidTriangle(3.0, 4.0, 8.0)
+        )
+    }
+
+    // --------------------------------
+    // checkTriangle() tests
+    // --------------------------------
+    //@TODO - Sprint 3
+    @Test
+    fun checkTriangle_decimal() {
+        assertEquals(
+            "ERROR: Enter three positive real numbers or integers.",
+            calculator.checkTriangle("-0.01", "1.0", "1.0")
+        )
+    }
+    @Test
+    fun checkTriangle_integer() {
+        assertEquals(
+            "ERROR: Enter three positive real numbers or integers.",
+            calculator.checkTriangle("-10.0", "10.0", "1.0")
+        )
+    }
+    @Test
+    fun checkTriangle_zeros() {
+        assertEquals(
+            "ERROR: Enter three positive real numbers or integers.",
+            calculator.checkTriangle("-0.0", "-0.0", "-0.0")
+        )
+    }
 
     // --------------------------------
     // classifyTriangle() tests
