@@ -190,8 +190,8 @@ class TriangleCalculatorTest
     @Test
     fun classifyTriangle_upperBoundary() {
         assertEquals(
-            "Equilateral!",
-            calculator.classifyTriangle(100.0, 100.0, 100.0)
+            "Scalene!",
+            calculator.classifyTriangle(100.0, 97.0, 4.0)
         )
     }
 
