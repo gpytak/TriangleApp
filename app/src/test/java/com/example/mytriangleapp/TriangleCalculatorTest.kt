@@ -60,21 +60,21 @@ class TriangleCalculatorTest
     @Test
     fun checkTriangle_empty() {
         assertEquals(
-            "ERROR: Enter three real numbers or integers.",
+            "ERROR: Enter three real numbers or integers between 1.0 and 100.0.",
             calculator.checkTriangle("", "1.0", "1.0")
         )
     }
     @Test
     fun checkTriangle_integer() {
         assertEquals(
-            "ERROR: Enter three positive real numbers or integers.",
+            "ERROR: Enter three real numbers or integers between 1.0 and 100.0.",
             calculator.checkTriangle("-10.0", "10.0", "1.0")
         )
     }
     @Test
     fun checkTriangle_zeros() {
         assertEquals(
-            "ERROR: Enter three positive real numbers or integers.",
+            "ERROR: Enter three real numbers or integers between 1.0 and 100.0.",
             calculator.checkTriangle("-0.0", "-0.0", "-0.0")
         )
     }
@@ -99,7 +99,63 @@ class TriangleCalculatorTest
             calculator.checkTriangle("2.0", "2.0", "5.0")
         )
     }
-
+    @Test
+    fun checkTriangle_lowerBoundary1() {
+        assertEquals(
+            "ERROR: Enter three real numbers or integers between 1.0 and 100.0.",
+            calculator.checkTriangle("0.2", "1.0", "1.1")
+        )
+    }
+    @Test
+    fun checkTriangle_lowerBoundary2() {
+        assertEquals(
+            "ERROR: Enter three real numbers or integers between 1.0 and 100.0.",
+            calculator.checkTriangle("1.0", "0.2", "1.1")
+        )
+    }
+    @Test
+    fun checkTriangle_lowerBoundary3() {
+        assertEquals(
+            "ERROR: Enter three real numbers or integers between 1.0 and 100.0.",
+            calculator.checkTriangle("1.0", "1.1", "0.2")
+        )
+    }
+    @Test
+    fun checkTriangle_lowerBoundary4() {
+        assertEquals(
+            "ERROR: Enter three real numbers or integers between 1.0 and 100.0.",
+            calculator.checkTriangle("0.3", "0.2", "0.4")
+        )
+    }
+    @Test
+    fun checkTriangle_upperBoundary1() {
+        assertEquals(
+            "ERROR: Enter three real numbers or integers between 1.0 and 100.0.",
+            calculator.checkTriangle("101.0", "5.0", "97.0")
+        )
+    }
+    @Test
+    fun checkTriangle_upperBoundary2() {
+        assertEquals(
+            "ERROR: Enter three real numbers or integers between 1.0 and 100.0.",
+            calculator.checkTriangle("5.0", "101.0", "97.0")
+        )
+    }
+    @Test
+    fun checkTriangle_upperBoundary3() {
+        assertEquals(
+            "ERROR: Enter three real numbers or integers between 1.0 and 100.0.",
+            calculator.checkTriangle("97.0", "5.0", "101.0")
+        )
+    }
+    @Test
+    fun checkTriangle_upperBoundary4() {
+        assertEquals(
+            "ERROR: Enter three real numbers or integers between 1.0 and 100.0.",
+            calculator.checkTriangle("103.0", "102.0", "104.0")
+        )
+    }
+    
     // --------------------------------
     // classifyTriangle() tests
     // --------------------------------
@@ -122,6 +178,20 @@ class TriangleCalculatorTest
         assertEquals(
             "Equilateral!",
             calculator.classifyTriangle(3.0, 3.0, 3.0)
+        )
+    }
+    @Test
+    fun classifyTriangle_lowerBoundary() {
+        assertEquals(
+            "Equilateral!",
+            calculator.classifyTriangle(1.0, 1.0, 1.0)
+        )
+    }
+    @Test
+    fun classifyTriangle_upperBoundary() {
+        assertEquals(
+            "Equilateral!",
+            calculator.classifyTriangle(100.0, 100.0, 100.0)
         )
     }
 
