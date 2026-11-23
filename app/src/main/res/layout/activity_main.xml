@@ -33,21 +33,21 @@
         android:id="@+id/side1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter first side"
+        android:hint="Enter first side [1.0 - 100.0]"
         android:inputType="numberDecimal|numberSigned"/>
 
     <EditText
         android:id="@+id/side2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter second side"
+        android:hint="Enter second side [1.0 - 100.0]"
         android:inputType="numberDecimal|numberSigned"/>
 
     <EditText
         android:id="@+id/side3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter third side"
+        android:hint="Enter third side [1.0 - 100.0]"
         android:inputType="numberDecimal|numberSigned"/>
 
     <Button
