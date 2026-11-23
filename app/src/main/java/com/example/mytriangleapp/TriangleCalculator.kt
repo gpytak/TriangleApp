@@ -18,9 +18,10 @@ class TriangleCalculator
 
         // If three inputs were provided, confirm they are positive real numbers or integers.
         if (side1 == null || side2 == null || side3 == null ||
-            side1 <= 0 || side2 <= 0 || side3 <= 0)
+            side1 < 1.0 || side2 < 1.0 || side3 < 1.0 ||
+            side1 > 100.0 || side2 > 100.0 || side3 > 100.0)
         {
-            return "ERROR: Enter three positive real numbers or integers."
+            return "ERROR: Enter three positive real numbers or integers between 1.0 and 100.0."
         }
 
         // Check whether the numbers form a valid triangle.
